@@ -4,8 +4,7 @@
 The backend is pretty much ready, but the UI is very much WIP - so not much to see there.
 
 # vissueliser
-## Info
-This app imports issue data from Github and provides an UI to analyse it.
+This app imports issue data from Github and provides an UI to analyse it:
 - Who (re-)opened the most issues?
 - What team does this person belong to?
 - What client has the most issues?
@@ -13,6 +12,8 @@ This app imports issue data from Github and provides an UI to analyse it.
 - Leaderboard
 
 This is useful for organisations that use Github issues as a system for code review. Each opened issue is comparable to a pull request.
+
+The Github API has quite strict rate limits + does not expose the data in a format we need. Therefore the backend service imports all the data from Github to make sure we don't have issues with rate limits and we can query the data with acceptable latency.
 
 ## Architecture
 ### Client
@@ -35,13 +36,15 @@ Returns a list of users.
 Updates data from GitHub.
 
 ## Configuration
+See `config.example.js`. There are 3 main sections:
+
 ### Import
-See [Preload data](#Preload-data)
-### Github ###
+See [Preload data](#preload-data)
+### Github
 Set you secret token here ([see docs](https://developer.github.com/v3/oauth/))
-### labels.teams ###
+### labels.teams
 This is an array of RegExps which are use to match labels as teams.
-### labels.users ###
+### labels.users
 An object of users. Not required but allows to show clear names for users and assign them to teams.
 
 ## Start
