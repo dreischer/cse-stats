@@ -1,0 +1,7 @@
+datastore
+node_modules
+dist
+.tmp
+todo
+.DS_Store
+config.js

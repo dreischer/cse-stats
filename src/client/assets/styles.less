@@ -1,0 +1,57 @@
+@import (less) 'semantic-ui-css/semantic.css';
+@import (less) 'react-bootstrap-daterangepicker/css/daterangepicker.css';
+@import (less) 'react-select/dist/react-select.css';
+
+.daterangepicker.dropdown-menu.ltr.show-calendar.opensright,
+.daterangepicker.dropdown-menu {
+  display: none;
+  border: 1px solid #ccc;
+
+  &.show-calendar .range_inputs {
+    display: block;
+  }
+  .range_inputs {
+    display: none;
+    position: absolute;
+    left: 190px;
+    bottom: 10px;
+
+    button {
+      border: 1px solid #ccc;
+      background: transparent;
+      border-radius: 3px;
+      padding: 5px 20px;
+    }
+    .applyBtn {
+      background: #c3e2cb;
+      border: 1px solid #788c7d;
+    }
+    .applyBtn[disabled] {
+      opacity: 0.4;
+    }
+    .cancelBtn {
+      display: none;
+    }
+  }
+}
+
+.datepicker-button {
+  .calendar.icon {
+    margin: 0 0 0 5px;
+  }
+}
+
+.filters > div {
+  width: 33%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.Select-value-gravatar {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
